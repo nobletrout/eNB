@@ -22,8 +22,10 @@ import datetime
 import eNAS, eMENU
 
 
-PLMN = '26806'
-IMSI = PLMN + '4800000000'
+# PLMN = '26806'
+PLMN = '311274'
+#IMSI = PLMN + '4800000000'
+IMSI = PLMN + '000000001'
 IMEISV = '1234567890123456'
 APN = 'internet'
 
@@ -83,7 +85,7 @@ def session_dict_initialization(session_dict):
 
     session_dict['STATE'] = 0
     session_dict['ENB-UE-S1AP-ID'] = 1000
-    session_dict['ENB-NAME'] = 'Fabricio-eNB'
+    session_dict['ENB-NAME'] = 'Totes-Safe-eNB'
     session_dict['ENB-PLMN'] = return_plmn(PLMN)
     session_dict['XRES'] = b'xresxres'
 
@@ -203,7 +205,7 @@ def return_plmn(mccmnc):
    if len(mccmnc)==5:
        return bcd(mccmnc[0] + mccmnc[1] + mccmnc[2] + 'f' + mccmnc[3] + mccmnc[4]) 
    elif len(mccmnc)==6:
-       return bcd(mccmnc[0] + mccmnc[1] + mccmnc[2] + mncmcc[5] + mccmnc[3] + mccmnc[4]) 
+       return bcd(mccmnc[0] + mccmnc[1] + mccmnc[2] + mccmnc[3] + mccmnc[4] + mccmnc[5]) 
    else:
      return b''
 
